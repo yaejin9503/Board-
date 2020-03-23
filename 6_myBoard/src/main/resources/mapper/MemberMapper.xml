@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="global.sesoc.test6.dao.MemberMapperDAO">
+  	<insert id = "insert" parameterType="Member">
+  		insert into member1 values 
+  		(
+  			#{userid},
+  			#{userpwd},
+  			#{username},
+  			#{phone},
+  			#{gender},
+  			#{email},
+  			#{address}
+  		)
+  	</insert>
+  	
+  	<select id = "login" parameterType ="Member" resultType="Member">
+  		select * from member1 
+  		where userid = #{userid} 
+  		and userpwd = #{userpwd}
+  	</select>
+  	
+  	
+  	<delete id = "delete" parameterType = "Member">
+  		delete from member1 
+  		where userid = #{userid} 
+  		and userpwd = #{userpwd}
+  	</delete>
+  	
+  	
+  	<update id ="update" parameterType = "Member">
+  		update member1 
+  		set 
+  		userpwd=#{userpwd},
+  		username=#{username},
+  		phone=#{phone},
+  		gender=#{gender},
+  		email=#{email},
+  		address=#{address}
+  		where 
+  		userid = #{userid}
+  	</update>
+ </mapper>
